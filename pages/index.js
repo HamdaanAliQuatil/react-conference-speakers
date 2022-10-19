@@ -1,13 +1,26 @@
 import { data } from "../SpeakerData";
 
-function Session(props){
-  //DRY - Don't Repeat Yourself
+function Session(props){ 
+  //DRY - Don't Repeat Yourself - {title, room} can be passed as params as well
   const {title, room} = props; 
   return(
     <span className="session w-100">
     {title} <strong> Room: {room}</strong>
   </span>
-};
+  );
+}
+
+function Sessions({sessions}) {
+  return (
+    <div className="sessionBox card h-250">
+    <Session title={sessions[0].title} room={sessions[0].room.name} />
+  </div>
+  );
+}
+
+// refactored component Sessions which includes other refactored component Session
+// IndexPage is the parent component. It consumes Sessions component and Sessions consumes Session component
+
 
 const IndexPage = () => {
   return (
@@ -28,20 +41,21 @@ const IndexPage = () => {
                       alt={`${first} ${last}`}
                     />
                     </div>
+
                     <div className="speaker-info">
                       <div className="d-flex justify-content-between mb-3">
                         <h3 className="text-truncate w-200">
                           {first} {last}
                         </h3>
+                      </div>
+                      <div className="speaker-company text-truncate w-200">
+                        <p>{bio} {company} {twitterHandle} {favorite}</p>
+                      </div>
                     </div>
-                    <div className="speaker-company text-truncate w-200">
-                      <p>{bio} {company} {twitterHandle} {favorite}</p>
-                    </div>
-                  </div>
-                  <div className="sessionBox card h-250">
-                    <Session title={sessions[0].title} room={sessions[0].room.name} />
-                    
-                </div>
+
+                  {/* component to display conference details */}
+                  <Sessions sessions={sessions} />
+
               </div>
             </div>
             );
