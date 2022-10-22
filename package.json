@@ -1,27 +1,19 @@
 {
-  "name": "react-conference-speakers",
+  "name": "designing-react-components-pluralsight-course",
   "version": "1.0.0",
-  "description": "",
+  "description": "example code",
   "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HamdaanAliQuatil/react-conference-speakers.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/HamdaanAliQuatil/react-conference-speakers/issues"
-  },
-  "homepage": "https://github.com/HamdaanAliQuatil/react-conference-speakers#readme",
   "dependencies": {
-    "next": "^12.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "^10.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
