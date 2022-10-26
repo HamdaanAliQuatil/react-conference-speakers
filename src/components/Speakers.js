@@ -6,7 +6,7 @@ function Speakers(){
     return (
         <div className="container-fluid">
             <Header />
-            {/* <SpeakersToolbar /> */}
+            <SpeakersToolbar />
             <SpeakersList data={data} />
         </div>
     );
